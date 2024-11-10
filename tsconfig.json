@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",  // Output to a 'dist' folder
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false,  // Disable JavaScript files
+    "noEmitOnError": true  // Prevent emitting output if there's an error
+  },
+  "include": [
+    "./**/*.ts"  // Only compile TypeScript files
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.js"  // Exclude JavaScript files from the compilation
+  ]
+}

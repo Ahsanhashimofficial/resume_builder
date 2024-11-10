@@ -1,0 +1,329 @@
+:root {
+	--timeline-circle-theme: #14253e;
+}
+
+html {
+	font-size: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 3rem 1rem;
+	min-height: 100vh;
+	background-color: var(--color-gray-light-3);
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: var(--color-gray-light-2);
+    display: flex;
+    box-shadow: 0px 0px 15px 4px #b3b3b3;
+    flex-wrap: wrap;
+}
+/* Intro Section */
+.intro {
+    flex: 0 0 250px;
+    background-color: #09e438;
+    box-shadow: 5px 0px 15px 0px #b3b3b3;
+    z-index: 5;
+    min-height: 100vh;
+}
+/* Profile Section */
+.profile {
+	position: relative;
+	background-image: url('bg.jfif');
+    background-size: cover;
+    background-position: center;
+	padding: 2rem 1rem;
+	margin-bottom: 50px;
+	text-align: center;
+	user-select: none;
+}
+.profile::after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: -15px;
+	width: 100%;
+	height: 30px;
+	background-color: black;
+	transform: skewY(-5deg);
+}
+.photo img {
+	width: 80%;
+	border-radius: 50%;
+}
+.bio .name {
+	font-size: 1.5rem;
+	text-align: center;
+	color: white;
+	margin: 0;
+	margin-top: 1rem;
+}
+.bio .profession {
+	font-size: 0.8rem;
+	text-align: center;
+	color: white;
+	margin: 0;
+}
+/* Objective and Contact Sections */
+.intro-section {
+	padding: 0 1rem;
+	color: white;
+}
+.intro-section .title {
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.about .paragraph {
+	text-align: justify;
+}
+.info-section {
+	margin: 1rem 0;
+}
+.info-section span {
+	position: relative;
+	transition: all 0.3s;
+}
+.info-section i {
+	color: black;
+	width: 20px;
+	height: 20px;
+}
+
+.link a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link span::after {
+	position: absolute;
+	content: '';
+	left: 50%;
+	bottom: -3px;
+	width: 0;
+	height: 2px;
+	background-color: white;
+	transition: width 0.3s;
+	transition-timing-function: cubic-bezier(.92,.57,.33,1.02);
+	transform: translate(-50%, 0);
+}
+
+.link span:hover {
+	color: black;
+}
+.link span:hover::after {
+	width: 100%;
+}
+/* Detail Section */
+.detail {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    min-width: 0;
+}
+.detail:hover > .detail-section:not(:hover) {
+	opacity: 0.3;
+}
+.detail-section {
+	transition: all 0.3s;
+}
+.detail-section:not(:last-of-type) {
+	padding-bottom: 1rem;
+}
+.detail-title {
+	display: flex;
+	align-items: center;
+}
+.detail-section > .detail-content {
+	padding: 1.5rem;
+	padding-left: 2rem;
+	user-select: none;
+}
+/* Education Section */
+.detail-section.edu > .detail-content {
+	padding-left: calc(1.5rem + 10px);
+}
+.title-icon + span {
+	font-size: 1.5rem;
+	transition: all 0.3s;
+}
+.title-icon {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-right: 1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	background-color: black;
+	border-radius: 50%;
+	transition: all 0.3s;
+}
+.title-icon i {
+	color: white;
+	line-height: 1rem;
+	font-size: 1rem;
+	text-align: center;
+}
+.detail-section:hover .title-icon {
+	transform: scale(1.5);
+	margin-right: 1.5rem;
+}
+.detail-section:hover .title-icon + span {
+	letter-spacing: 1.5px;
+}
+/* Professional Experience Section */
+.timeline-block {
+	position: relative;
+	padding-left: 30px;
+}
+.timeline-block:not(:last-of-type) {
+	margin-bottom: 1rem;	
+}
+.timeline-block h1 {
+	font-size: 1rem;
+	margin: 5px 0;
+	transition: all 0.3s;
+}
+.timeline-block p {
+	font-size: 0.8rem;
+	margin: 5px 0;
+}
+.timeline-block time {
+	font-size: 0.8rem;
+	color: #09e438;
+}
+.timeline-block::before {
+	position: absolute;
+	content: '';
+	width: 15px;
+	height: 15px;
+	background-color: white;
+	border: 3px solid #14253e;
+	border-radius: 50%;
+	left: -10px;
+	top: -5px;
+}
+.timeline-block::after {
+	position: absolute;
+	content: '';
+	width: 3px;
+	height: 100%;
+	background-color: #14253e;
+	left: -1px;
+	top: 13px;
+}
+.timeline-block:hover h1 {
+	color: #09e438;
+}
+.timeline-block:hover::before {
+	animation: circle 1.2s infinite;
+}
+/* Professional Skills Section */
+/* Basic styles for the skills container */
+#skills-container {
+    display: none; /* Hidden by default */
+}
+
+/* Style for the toggle button */
+.toggle-button {
+    padding: 8px 12px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Change button on hover */
+.toggle-button:hover {
+    color: #09e438;
+}
+
+.pg-list {
+	padding: 0;
+	list-style: none;
+}
+.pg-list > li {	
+	margin: 1rem 0;
+	display: flex;
+	align-items: center;
+}
+.sb-skeleton {
+	position: relative;
+	flex: 1 0 auto;
+	height: 2px;
+	background-color: #9a9a9a;
+}
+.pg-list > li > span {
+    width: 150px; /* Set a fixed width for all skill names */
+	margin-right: 20px; /* Add space between span and skillbar */
+    text-align: left; /* Align text to the left */
+    position: relative;
+}
+.pg-list > li > span::before {
+    content: "•"; /* Add bullet point or any other symbol */
+    position: absolute;
+    left: -20px; /* Adjust distance of the bullet from the text */
+    color: black; /* Set the bullet color, or any desired color */
+    font-size: 1.2rem; /* Adjust bullet size */
+}
+.sb-skeleton > .skillbar {
+	position: absolute;
+	left: 0;
+	top: -1px;
+	width: var(--pgbar-length);
+	height: 4px;
+	background-color: #09e438;
+}
+/* Responsive Styles  1024px */
+@media (max-width: 1024px) {
+	html {
+		font-size: 90%;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.intro, .detail {
+		flex: 0 0 100%;
+		box-shadow: none;
+	}
+	.intro-section {
+		padding: 0 2rem;
+	}
+	.profile {
+		margin-bottom: 1rem;
+	}
+	.profile::after {
+		display: none;
+	}
+	.photo img {
+		width: 100px;
+		height: 100px;
+	}
+}
+/* Responsive Styles  786 px */
+@media (max-width: 768px) {
+	html {
+		font-size: 80%;
+	}
+    #skills-container {
+        display: block; /* Show skills container on larger screens */
+    }
+}
+/* Responsive Styles  500px */
+@media (max-width: 500px) {
+	html {
+		font-size: 70%;
+	}
+}
